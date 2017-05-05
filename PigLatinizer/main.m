@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+#import "NSString+PigLatinize.h"
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+      
+        NSString *hello = [@"Hello" stringByPigLatinization];
+        
+        
     }
     return 0;
 }
