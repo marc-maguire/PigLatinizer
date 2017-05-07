@@ -14,8 +14,8 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
       
 //        NSString *hello = @"Hello";
-        NSString *pigLatinVersion = [@"hello" stringByPigLatinization];
-        NSLog(@"The pig latin version of 'Hello' is %@",pigLatinVersion);
+        NSString *pigLatinVersion = [@"ehello" stringByPigLatinization];
+        NSLog(@"The pig latin version of 'ehello' is %@",pigLatinVersion);
         
         
     }

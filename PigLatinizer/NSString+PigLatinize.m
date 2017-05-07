@@ -53,9 +53,19 @@
             [workingSpace addObject:recompileString];
             NSLog(@"attempt 1 = %@",workingSpace);
             
+        } else if (indexOfFirstConsonantInCharacterArray == 1) {
+            consonantExtractionString = [characterArray[0]lowercaseString];
+            consonantExtractionString = [consonantExtractionString stringByAppendingString:characterArray[1]];
+            NSLog(@"consonantExtractionString: %@",consonantExtractionString);
+            [characterArray removeObjectAtIndex:0];
+            [characterArray removeObjectAtIndex:0];
+            NSString *stringWithAy = [consonantExtractionString stringByAppendingString:@"ay"];
+            [characterArray addObject:stringWithAy];
+            NSString *recompileString = [characterArray componentsJoinedByString:@""];
+            [workingSpace addObject:recompileString];
+            NSLog(@"attempt 1 = %@",workingSpace);
+        
         }
-        
-        
         
     }
     
