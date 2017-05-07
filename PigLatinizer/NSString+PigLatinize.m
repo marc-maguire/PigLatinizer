@@ -12,30 +12,21 @@
 
 -(NSString *)stringByPigLatinization {
     
-    //if first letter is vowel, do nothing and append -ay
     
     NSString *consonants = @"bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ";
     NSCharacterSet *consonantSet = [NSCharacterSet characterSetWithCharactersInString:consonants];
-    //array of words to work on
     NSArray *input = [self componentsSeparatedByString:@" "];
-   
-    
     NSMutableArray *workingSpace = [[NSMutableArray alloc]init];
-
-    
-    NSLog(@"attempt 1 = %@",workingSpace);
-   
+    NSString *consonantExtractionString = [[NSString alloc]init];
 
     for (NSString *string in input){
-         NSMutableArray *characterArray = [[NSMutableArray alloc]init];
-         NSInteger indexOfFirstConsonantInCharacterArray = 0;
         
+        
+         NSMutableArray *characterArray = [[NSMutableArray alloc]init];
                 for (int i = 0; i < [string length]; i++) {
             NSString *ch = [string substringWithRange:NSMakeRange(i, 1)];
             [characterArray addObject:ch];
-            NSLog(@"constonant array %@",characterArray);
-        } //at this point, we have an array of characters
-        //search through the characterArray to find the first consonant
+        }
         NSRange firstConsonantRange = [string rangeOfCharacterFromSet:consonantSet];
         NSRange firstCharacterRange = NSMakeRange(0, [string length]);
         NSRange searchRange;
@@ -45,30 +36,20 @@
             searchRange = NSMakeRange(firstCharacterRange.location, firstConsonantRange.location+1);
         }
         
-        //doesn't take consonant out if there are leading vowels
-
-        
         //now i have the range of the first consonant - pull out the length to act as the index
-        indexOfFirstConsonantInCharacterArray = firstConsonantRange.location;
-        //        NSLog(@"index of first consonant = %ld",(long)indexOfFirstConsonantInCharacterArray);
-        //now i know that the index of the firstConsonant is x. lets remove everything up to that index and add it to the end.
-        NSString *consonantExtractionString = [[NSString alloc]init];
-        
-        
-        //need to trim result for punctuation so that commas get moved to the end or removed all together.
-        
-        consonantExtractionString = [[string substringWithRange:searchRange]stringByAppendingString:@"ay"];
-        //        NSLog(@"consonantExtractionString: %@",consonantExtractionString);
+        consonantExtractionString = [[[string substringWithRange:searchRange]stringByAppendingString:@"ay"]lowercaseString];
         [characterArray removeObjectsInRange:searchRange];
         [characterArray addObject:consonantExtractionString];
         NSString *recompileString = [characterArray componentsJoinedByString:@""];
         [workingSpace addObject:recompileString];
-//        [characterArray removeAllObjects];
-        //        NSLog(@"attempt 1 = %@",workingSpace);
+
     }
 
     NSString *finalString = [workingSpace componentsJoinedByString:@" "];
     return finalString;
 }
+
+//need to trim result for punctuation so that commas get moved to the end or removed all together.
+
 
 @end
