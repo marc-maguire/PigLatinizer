@@ -21,7 +21,8 @@
    
     
     NSMutableArray *workingSpace = [[NSMutableArray alloc]init];
-    NSString *finalString = [workingSpace componentsJoinedByString:@" "];
+
+    
     NSLog(@"attempt 1 = %@",workingSpace);
     
     for (NSString *string in input){
@@ -58,7 +59,8 @@
         
     }
     
-    
+
+    NSString *finalString = [workingSpace componentsJoinedByString:@" "];
     return finalString;
 }
 
