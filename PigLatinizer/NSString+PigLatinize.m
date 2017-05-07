@@ -12,6 +12,7 @@
 
 -(NSString *)stringByPigLatinization {
     
+    //crashes if 1 letter is ever entered
     
     NSString *consonants = @"bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ";
     NSCharacterSet *consonantSet = [NSCharacterSet characterSetWithCharactersInString:consonants];
@@ -37,12 +38,15 @@
         }
         
         //now i have the range of the first consonant - pull out the length to act as the index
-        consonantExtractionString = [[[string substringWithRange:searchRange]stringByAppendingString:@"ay"]lowercaseString];
-        [characterArray removeObjectsInRange:searchRange];
-        [characterArray addObject:consonantExtractionString];
-        NSString *recompileString = [characterArray componentsJoinedByString:@""];
-        [workingSpace addObject:recompileString];
-
+        if ([characterArray count] == 1) {
+            [workingSpace addObject:[characterArray[0]stringByAppendingString:@"ay"]];
+        } else {
+            consonantExtractionString = [[[string substringWithRange:searchRange]stringByAppendingString:@"ay"]lowercaseString];
+            [characterArray removeObjectsInRange:searchRange];
+            [characterArray addObject:consonantExtractionString];
+            NSString *recompileString = [characterArray componentsJoinedByString:@""];
+            [workingSpace addObject:recompileString];
+            }
     }
 
     NSString *finalString = [workingSpace componentsJoinedByString:@" "];
