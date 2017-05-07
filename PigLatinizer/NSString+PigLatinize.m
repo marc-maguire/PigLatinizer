@@ -37,15 +37,15 @@
         } //at this point, we have an array of characters
         //search through the characterArray to find the first consonant
         NSRange firstConsonantRange = [string rangeOfCharacterFromSet:consonantSet];
-        NSRange firstCharacter = [string rangeOfString:characterArray[0]];
+        NSRange firstCharacterRange = NSMakeRange(0, [string length]);
         NSRange searchRange;
-        if (firstConsonantRange.location == firstCharacter.location) {
+        if (firstConsonantRange.location == firstCharacterRange.location) {
             searchRange = firstConsonantRange;
         } else {
-            searchRange = NSMakeRange(firstCharacter.location, firstConsonantRange.location);
+            searchRange = NSMakeRange(firstCharacterRange.location, firstConsonantRange.location+1);
         }
         
-        
+        //doesn't take consonant out if there are leading vowels
 
         
         //now i have the range of the first consonant - pull out the length to act as the index
@@ -63,7 +63,7 @@
         [characterArray addObject:consonantExtractionString];
         NSString *recompileString = [characterArray componentsJoinedByString:@""];
         [workingSpace addObject:recompileString];
-        [characterArray removeAllObjects];
+//        [characterArray removeAllObjects];
         //        NSLog(@"attempt 1 = %@",workingSpace);
     }
 
