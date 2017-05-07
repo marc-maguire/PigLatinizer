@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		92FD60C31EBD1DB600817FD0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FD60C21EBD1DB600817FD0 /* main.m */; };
 		92FD60CB1EBD1E2C00817FD0 /* NSString+PigLatinize.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FD60CA1EBD1E2C00817FD0 /* NSString+PigLatinize.m */; };
+		92FD610E1EBF8EDD00817FD0 /* InputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FD610D1EBF8EDD00817FD0 /* InputHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		92FD60C21EBD1DB600817FD0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		92FD60C91EBD1E2C00817FD0 /* NSString+PigLatinize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PigLatinize.h"; sourceTree = "<group>"; };
 		92FD60CA1EBD1E2C00817FD0 /* NSString+PigLatinize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PigLatinize.m"; sourceTree = "<group>"; };
+		92FD610C1EBF8EDD00817FD0 /* InputHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputHandler.h; sourceTree = "<group>"; };
+		92FD610D1EBF8EDD00817FD0 /* InputHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				92FD60C21EBD1DB600817FD0 /* main.m */,
+				92FD610C1EBF8EDD00817FD0 /* InputHandler.h */,
+				92FD610D1EBF8EDD00817FD0 /* InputHandler.m */,
 				92FD60C91EBD1E2C00817FD0 /* NSString+PigLatinize.h */,
 				92FD60CA1EBD1E2C00817FD0 /* NSString+PigLatinize.m */,
 			);
@@ -125,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92FD60CB1EBD1E2C00817FD0 /* NSString+PigLatinize.m in Sources */,
+				92FD610E1EBF8EDD00817FD0 /* InputHandler.m in Sources */,
 				92FD60C31EBD1DB600817FD0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +260,7 @@
 				92FD60C81EBD1DB600817FD0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

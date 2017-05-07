@@ -9,15 +9,23 @@
 #import <Foundation/Foundation.h>
 
 #import "NSString+PigLatinize.h"
+#import "InputHandler.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
       
-//        NSString *hello = @"Hello";
-        NSString *pigLatinVersion = [@"eehello" stringByPigLatinization];
-        NSLog(@"The pig latin version of 'eehello' is %@",pigLatinVersion);
         
+        BOOL loopOn = YES;
         
+        NSLog(@"Welcome to Piglatinizer!");
+        while (loopOn) {
+            
+        NSLog(@"Please enter a sentence to get the piglatin version:");
+        NSString *inputString = [InputHandler initiateUserInteraction];
+        NSString *pigLatinVersion = [inputString stringByPigLatinization];
+        NSLog(@"%@",pigLatinVersion);
+        
+        }
     }
     return 0;
 }

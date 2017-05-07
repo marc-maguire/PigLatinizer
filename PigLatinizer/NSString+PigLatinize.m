@@ -43,6 +43,7 @@
         NSString *consonantExtractionString = [[NSString alloc]init];
 
         
+        //need to trim result for punctuation so that commas get moved to the end or removed all together.
         if (indexOfFirstConsonantInCharacterArray == 0) {
             consonantExtractionString = [characterArray[0]lowercaseString];
             NSLog(@"consonantExtractionString: %@",consonantExtractionString);
