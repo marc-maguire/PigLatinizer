@@ -12,9 +12,11 @@
 
 -(NSString *)stringByPigLatinization {
     
-    //crashes if 1 letter is ever entered
+    // change logic to take all consonants up to the first vowel and put them on the end
     
-    NSString *consonants = @"bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ";
+    
+  NSString *consonants = @"bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ";
+//  NSString *consonants = @"aeiouAEIOU";
     NSCharacterSet *consonantSet = [NSCharacterSet characterSetWithCharactersInString:consonants];
     NSArray *input = [self componentsSeparatedByString:@" "];
     NSMutableArray *workingSpace = [[NSMutableArray alloc]init];
@@ -31,6 +33,8 @@
         NSRange firstConsonantRange = [string rangeOfCharacterFromSet:consonantSet];
         NSRange firstCharacterRange = NSMakeRange(0, [string length]);
         NSRange searchRange;
+        //NSString *pigLatinWord = [word substringWithRange:NSMakeRange(firstPart.length, word.length - firstPart.length)];
+        
         if (firstConsonantRange.location == firstCharacterRange.location) {
             searchRange = firstConsonantRange;
         } else {
