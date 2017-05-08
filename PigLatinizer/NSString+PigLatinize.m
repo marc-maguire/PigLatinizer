@@ -15,7 +15,7 @@
     // change logic to take all consonants up to the first vowel and put them on the end
     
     
-  NSString *consonants = @"bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ";
+    NSString *consonants = @"bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ";
 //  NSString *consonants = @"aeiouAEIOU";
     NSCharacterSet *consonantSet = [NSCharacterSet characterSetWithCharactersInString:consonants];
     NSArray *input = [self componentsSeparatedByString:@" "];
